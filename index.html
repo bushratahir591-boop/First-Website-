@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Combined Website</title>
+    <style>
+        /* Tamam CSS yahan aik hi baar likhi gayi hai */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 50px; /* Footer ke liye jagah */
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav {
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        main {
+            padding: 20px;
+            min-height: 300px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        /* Pages ko shuru mein chhupane ke liye */
+        .page-content {
+            display: none;
+        }
+        /* Jo page active ho usay dikhane ke liye */
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">About us</a>
+        <a onclick="showPage('contact')">Contact Us</a>
+    </nav>
+
+    <main id="main-content">
+        <div id="home" class="page-content active">
+            <h2>Home Page</h2>
+            <p>This is my Home page content (from php.html & home.html).</p>
+            <button onclick="alert('Hello! You clicked the button.')">Click Me</button>
+        </div>
+
+        <div id="about" class="page-content">
+            <h2>About Us</h2>
+            <p>This is the About Us section.</p>
+            <button onclick="alert('About Page Button!')">Learn More</button>
+        </div>
+
+        <div id="contact" class="page-content">
+            <h2>Contact Page</h2>
+            <p>This is my contact page (from contact.html).</p>
+            <button onclick="alert('We will contact you soon!')">Send Message</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 My Website
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Pehle saari pages ko chhupao
+            var pages = document.getElementsByClassName('page-content');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].classList.remove('active');
+            }
+            // Sirf click kiye gaye page ko dikhao
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
